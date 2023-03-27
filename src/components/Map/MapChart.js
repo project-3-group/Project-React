@@ -15,7 +15,7 @@ const MapChart = ({ onSelectCountry, highlightSelected  }) => {
   const lastSelected = useRef(null)
 
   const handleOnClick = (e, geo) => {
-    if (onSelectCountry) onSelectCountry(geo.properties.name);
+    if (onSelectCountry) onSelectCountry(geo);
 
     if(highlightSelected){
       e.target.classList.add("path-clicked");
