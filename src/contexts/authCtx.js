@@ -80,8 +80,7 @@ function AuthProvider({ children }) {
         const data = await resp.json();
         throw data;
       }
-      const data = await resp.json();
-      setUser(data);
+      updateUserData()
     } catch (error) {
       setLoginError(error);
     }
