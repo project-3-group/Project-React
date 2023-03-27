@@ -1,0 +1,53 @@
+
+.map-chart{
+  position: relative;
+}
+
+.country-element {
+  fill: #D6D6DA;
+  outline: none;
+  transform: fill 1s;
+}
+
+.country-element:hover {
+  fill: #F53;
+  outline: none;
+}
+
+.country-element:pressed {
+  fill: #D6D6DA;
+  outline: none;
+}
+
+.sphere-path{
+  fill: rgb(71, 49, 150);
+}
+
+.path-clicked{
+  stroke: red;
+}
+
+.map-btn-container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap:.5em;
+  right: 2em;
+  top: 2em;
+  
+}
+
+.map-btn{
+  border:none;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  padding:.2em;
+  background-color: #F53;
+}
+
+.map-btn:hover{
+  border:none;
+  border-radius: 50%;
+  cursor: pointer;
+}
