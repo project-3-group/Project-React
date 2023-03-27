@@ -7,13 +7,14 @@ function NavBar() {
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/">
-          <img
+          {/* <img
             src='logo.jpeg'
             width="200"
             height="100"
             className="d-inline-block align-top"
             alt="Logo"
-          />
+          /> */}
+          GeoGenius
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
