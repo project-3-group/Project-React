@@ -8,7 +8,7 @@
     
   }
 
-  body{
+  .about-section{
     background-image: url(../../assest/—Pngtree—3d\ world\ map\ with\ shadow_1171550.png);
     background-position: center;
     background-size: cover;
@@ -24,7 +24,7 @@
     border: 3px solid #FFF
 
   }
-  .card {
+  .c-s {
     border-radius: 35px;
     margin: 78px;
     display: flex;
@@ -57,7 +57,7 @@ h1 ,h2{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 230px;
+  padding: 230px;
 }
 
 .about h1 {
