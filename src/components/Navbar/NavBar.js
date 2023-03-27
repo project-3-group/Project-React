@@ -1,8 +1,8 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import logo from './logo.svg';
 import { useAuthCtx, useUser } from "../../contexts/authCtx";
+// import logo from './logo.svg';
 
 function NavBar() {
   const user = useUser();
@@ -11,16 +11,15 @@ function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Link to="/" className="navbar-brand">
-          {/* <img
-            // src={logo}
-            width="30"
-            height="30"
+        <Navbar.Brand href="/">
+          <img
+            src='logo.jpeg'
+            width="200"
+            height="100"
             className="d-inline-block align-top"
             alt="Logo"
-          /> */}
-          GeoGenius
-        </Link>
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
