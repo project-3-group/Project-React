@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const userCtx = createContext({
   first_name: "",
@@ -36,25 +37,30 @@ function AuthProvider({ children }) {
   const [logoutError, setLogoutError] = useState(null);
   const [logoutLoading, setLogoutLoading] = useState(false);
 
+  const navigate = useNavigate()
+
   useEffect(() => {
     updateUserData();
   }, []);
 
   const updateUserData = async () => {
     try {
-      setUpdateUserLoading(true)
-      setUpdateUserError(null)
+      setUpdateUserLoading(true);
+      setUpdateUserError(null);
       const loginURL = process.env.REACT_APP_SERVER_URL + "/users/user";
       const resp = await fetch(loginURL, { credentials: "include" });
 
-      if (resp.ok === false) return setUser(null);
+      if (resp.ok === false) {
+        setUpdateUserLoading(false);
+        return setUser(null);
+      }
       const data = await resp.json();
       setUser(data);
     } catch (error) {
       console.log(error);
-      setUpdateUserError(error)
+      setUpdateUserError(error);
     }
-    setUpdateUserLoading(false)
+    setUpdateUserLoading(false);
   };
 
   const login = async (email, password) => {
@@ -75,7 +81,7 @@ function AuthProvider({ children }) {
         throw data;
       }
       const data = await resp.json();
-      setUser(data)
+      setUser(data);
     } catch (error) {
       setLoginError(error);
     }
@@ -92,6 +98,7 @@ function AuthProvider({ children }) {
         credentials: "include",
       });
       setUser(null);
+      navigate('./')
       return resp;
     } catch (error) {
       setLogoutError(error);
@@ -111,7 +118,7 @@ function AuthProvider({ children }) {
           logoutError,
           logoutLoading,
           updateUserError,
-          updateUserLoading
+          updateUserLoading,
         }}
       >
         {children}

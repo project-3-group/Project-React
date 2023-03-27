@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useState,useEffect } from "react";
+import './SignUp.css'
 import signup from '../../api/signup';
 import { useUser } from '../../contexts/authCtx';
 
@@ -51,7 +52,7 @@ const SignUp = () => {
 
   return (
     <Container>
-      <Row className="vh-100 d-flex justify-content-center align-items-center">
+      <Row className="d-flex justify-content-center align-items-center signup-form-container">
         <Col md={10} lg={8} xs={12}>
           <Card className="shadow">
             <Card.Body>
@@ -150,7 +151,7 @@ const SignUp = () => {
                   </div>
                   <Row className="m-3">
                     {errors && (
-                      <Alert variant="danger">{errors?.message}</Alert>
+                      <Alert variant="danger">{errors?.errors ? errors.errors.map(err => <p>{err}</p>):errors?.message}</Alert>
                     )}
                   </Row>
                 </Form>

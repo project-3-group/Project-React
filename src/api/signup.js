@@ -24,8 +24,6 @@ async function signup({
     const data = await resp.json();
     throw data;
   }
-  const user =  await resp.json()
-  return user
 }
 
 export default signup;

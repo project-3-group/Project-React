@@ -7,7 +7,7 @@ import { useUser,useAuthCtx } from "../../contexts/authCtx";
 function Login() {
   const navigate = useNavigate()
   const user = useUser()
-  const {login , loginError: errors,loginLoading : loading ,updateUserLoading } = useAuthCtx();
+  const {login , loginError: errors,loginLoading : loading} = useAuthCtx();
 
   useEffect(() => {
     if(user !== null){
@@ -23,12 +23,10 @@ function Login() {
 
       await login(email,password)
   };
-
-  if(updateUserLoading || user) return <div>loading...</div>
-
+  
   return (
     <Container>
-      <Row className="vh-100 d-flex justify-content-center align-items-center">
+      <Row className="d-flex justify-content-center align-items-center login-form-container" >
         <Col md={8} lg={6} xs={12}>
           <Card className="shadow">
             <Card.Body>
