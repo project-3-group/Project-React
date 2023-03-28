@@ -1,0 +1,125 @@
+.footer {
+    background-color: var(--blue-90);
+    
+  }
+  
+   .footer h6 {
+    text-align: center;
+    color: white;
+     margin-top: 20px; 
+    padding-top: 0.5%;
+  }
+  
+  .hover {
+    --b: 0.1em;
+    --c: white;
+  
+    color: white;
+    padding-block: var(--b);
+    background: linear-gradient(var(--c) 50%, var(--blue-90) 0) 0%
+        calc(100% - var(--_p, 0%)) / 100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b)
+        no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.3s var(--_s, 0s) linear,
+      background-size 0.3s calc(0.3s - var(--_s, 0s));
+  }
+  
+  .hover:hover {
+    --_p: 100%;
+    --_s: 0.3s;
+  }
+  
+  :root {
+    --link-size: 35px;
+    --trans-props: all 0.3s ease;
+  }
+  
+  .wrapper {
+    height: 7vh;
+    text-align: center;
+    padding-bottom: 3.7%;
+  }
+  
+  .wrapper,
+  .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+  .social-icon {
+    display: flex;
+  
+    position: relative;
+    overflow: hidden;
+  
+    width: var(--link-size);
+    height: var(--link-size);
+    margin: 8px;
+  
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px white;
+  
+    text-decoration: none;
+  
+    transition: var(--trans-props);
+  }
+  
+  .social-icon i {
+    margin: auto;
+  
+    font-size: 24px;
+    color: var(--blue-90);
+    z-index: 1;
+  }
+  
+  .social-icon:after {
+    content: "";
+  
+    width: var(--link-size);
+    height: var(--link-size);
+  
+    position: absolute;
+  
+    transform: translate(0, var(--link-size));
+  
+    border-radius: 50%;
+    transition: var(--trans-props);
+  }
+  
+  .social-icon.mail:after {
+    background-color: #fbaf16;
+  }
+  
+  .social-icon.whatsapp:after {
+    background-color: #1877F2;
+  }
+  
+  .social-icon.instagram:after {
+    background-image: linear-gradient(
+      to bottom left,
+      #4f5bd5,
+      #962fbf,
+      #ca2771,
+      #fa7e1e,
+      #feda75
+    );
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px var(--blue-90);
+  }
+  
+  .social-icon:hover i {
+    color: white;
+  }
+  
+  .social-icon:hover:after {
+    transform: translate(0) scale(1.2);
+  }
+  
+  
