@@ -8,7 +8,7 @@ import {
   Alert,
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import './SignUp.css'
 import signup from '../../api/signup';
 import { useUser } from '../../contexts/authCtx';
@@ -16,17 +16,17 @@ import { useUser } from '../../contexts/authCtx';
 const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState(null);
-  
+
   const navigate = useNavigate();
   const user = useUser()
 
   useEffect(() => {
-    if(user !== null){
+    if (user !== null) {
       return navigate('/')
     }
   }, [navigate, user])
-  
-  
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -56,13 +56,15 @@ const SignUp = () => {
         <Col md={10} lg={8} xs={12}>
           <Card className="shadow">
             <Card.Body className="signup">
-              <div className="mb-3 mt-4">
+              <div className="text-center mb-3 mt-4">
                 <h2 className="fw-bold mb-2 text-uppercase">GeoGenius</h2>
                 {/* <p className=" mb-5">Please enter your details to join us!</p> */}
                 <Form onSubmit={handleSubmit}>
                   <Row className="mb-3">
                     <Form.Group
                       as={Col}
+                      xs={12}
+                      md={6}
                       className="mb-3"
                       controlId="formFirstName"
                     >
@@ -145,13 +147,15 @@ const SignUp = () => {
                       variant="primary"
                       type="submit"
                       disabled={isLoading}
+                      className="glow-on-hover"
+
                     >
                       {isLoading ? "Signing Up..." : "Sign Up"}
                     </Button>
                   </div>
                   <Row className="m-3">
                     {errors && (
-                      <Alert variant="danger">{errors?.errors ? errors.errors.map(err => <p>{err}</p>):errors?.message}</Alert>
+                      <Alert variant="danger">{errors?.errors ? errors.errors.map(err => <p>{err}</p>) : errors?.message}</Alert>
                     )}
                   </Row>
                 </Form>

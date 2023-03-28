@@ -9,7 +9,6 @@
   }
 
   .about-section{
-    background-image: url(../../assest/—Pngtree—3d\ world\ map\ with\ shadow_1171550.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -68,3 +67,10 @@ h1 ,h2{
 p.paragraph {
   font-size: larger;
 } 
+
+
+.about {
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient( #2C74B3 , #fff);
+}

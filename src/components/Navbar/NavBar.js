@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuthCtx, useUser } from "../../contexts/authCtx";
 import logo from '../../assest/internet.png'
 // import logo from './logo.svg';
-
+import './NavBar.js'
 
 function NavBar() {
   const user = useUser();
