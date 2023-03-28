@@ -1,6 +1,9 @@
 function DefaultQus({question}) {
     return (
-      <div>{question}</div>
+      <>
+          <i class="fa-solid fa-arrow-right fa-2x fa-pull-right fa-border"></i>
+            {question}
+      </>
       
     )
   }

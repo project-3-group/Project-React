@@ -1,82 +1,127 @@
-import './MapChart.css';
 import React, { memo, useRef, useState } from "react";
-//import ReactDOM from "react-dom";
-import { Sphere, ZoomableGroup, ComposableMap, Geographies, Geography } from "react-simple-maps";
-import { MdZoomInMap, MdZoomOutMap, MdRestartAlt } from 'react-icons/md'
+import {
+  ZoomableGroup,
+  ComposableMap,
+  Geographies,
+  Geography,
+} from "react-simple-maps";
+import { MdZoomInMap, MdZoomOutMap, MdRestartAlt } from "react-icons/md";
+import { TbMessageOff, TbMessageLanguage } from "react-icons/tb";
+import data from "../../assets/world-countries.json";
+import "./MapChart.css";
+import { Tooltip } from "react-tooltip";
 
-const Map = ({ props,submitAnswer, onSelectCountry, highlightSelected }) => {
-    const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
-    const lastSelected = useRef(null)
+const MapChart = ({
+  onSelectCountry,
+  highlightSelected,
+  toggleShowNameOnHover,
+  showNameOnHover,
+}) => {
+  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
 
-    const handleOnClick = (e, geo) => {
-        if (onSelectCountry) onSelectCountry(geo);
+  const lastSelected = useRef(null);
 
-        if (highlightSelected) {
-            e.target.classList.add("path-clicked");
-            lastSelected.current?.classList.remove('path-clicked')
-            lastSelected.current = e.target;
-        }
-    };
+  const handleOnClick = (e, geo) => {
+    if (onSelectCountry) onSelectCountry(geo);
 
-    function handleZoomIn() {
-        if (position.zoom >= 2) return;
-        setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }));
+    if (highlightSelected) {
+      e.target.classList.add("path-clicked");
+      lastSelected.current?.classList.remove("path-clicked");
+      lastSelected.current = e.target;
     }
+  };
 
-    function handleZoomOut() {
-        if (position.zoom <= 1) return;
-        setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }));
-    }
+  function handleZoomIn() {
+    if (position.zoom >= 4) return;
+    setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }));
+  }
 
-    function handleResetPosition() {
-        setPosition({ coordinates: [0, 0], zoom: 1 });
-    }
+  function handleZoomOut() {
+    if (position.zoom <= 1) return;
+    setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }));
+  }
 
-    function handleMoveEnd(position) {
-        setPosition(position);
-    }
+  function handleResetPosition() {
+    setPosition({ coordinates: [0, 0], zoom: 1 });
+  }
 
+  function handleMoveEnd(position) {
+    setPosition(position);
+  }
 
+  return (
+    <div className="map-chart">
+      <ComposableMap
+        width={900}
+        height={400}
+        projectionConfig={{
+          rotate: [-10, 0, 0],
+          scale: 147,
+        }}
+        viewBox="0 7 900 387"
+      >
+        <ZoomableGroup
+          zoom={position.zoom}
+          center={position.coordinates}
+          onMoveEnd={handleMoveEnd}
+        >
+          <Geographies geography={data}>
+            {({ geographies }) =>
+              geographies.map((geo) => (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  className="country-element"
+                  data-tooltip-content={geo.properties.name}
+                  onClick={(e) => handleOnClick(e, geo)}
+                />
+              ))
+            }
+          </Geographies>
+        </ZoomableGroup>
+      </ComposableMap>
 
-
-    const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
-
-    const handleClick = (geo) => {
-        const country = geo.properties.name;
-        console.log(country);
-        submitAnswer(country);
-
-    };
-
-    return (
-        <div className="map-chart" width={1000} height={400}>
-            <ComposableMap width={1000} height={400} projectionConfig={{ rotate: [-10, 0, 0], scale: 147, }}>
-                <ZoomableGroup zoom={position.zoom} center={position.coordinates} onMoveEnd={handleMoveEnd}>
-                    <Sphere stroke="#000" strokeWidth={0.3} className="sphere-path" />
-                    <Geographies geography={geoUrl}>
-                        {({ geographies }) =>
-                            geographies.map((geo) => (
-                                <Geography
-                                    key={geo.rsmKey}
-                                    geography={geo}
-                                    className="country-element"
-                                    data-tooltip-content={geo.properties.name}
-                                    onClick={() => handleClick(geo)}
-                                />
-                            ))
-                        }
-                    </Geographies>
-                </ZoomableGroup>
-            </ComposableMap>
-            <div className="map-btn-container">
-                <MdZoomInMap className="map-btn map-btn-minus" onClick={handleZoomOut} />
-                {/* <button className="map-btn map-btn-minus" onClick={handleZoomOut}>-</button> */}
-                {/* <button className="map-btn map-btn-plus" onClick={handleZoomIn}>+</button> */}
-                <MdZoomOutMap className="map-btn map-btn-plus" onClick={handleZoomIn} />
-                {/* <button className="map-btn map-btn-minus" onClick={handleResetPosition}>Reset</button> */}
-                <MdRestartAlt className="map-btn map-btn-minus" onClick={handleResetPosition} />
-            </div>
-        </div>
-    );
+      <div className="map-btn-container">
+        <Tooltip id="btn-tooltip" delayShow={1000} />
+        <MdZoomInMap
+          className="map-btn map-btn-minus"
+          onClick={handleZoomOut}
+          data-tooltip-id="btn-tooltip"
+          data-tooltip-content="Zoom In"
+        />
+        
+        <MdZoomOutMap
+          className="map-btn map-btn-plus"
+          onClick={handleZoomIn}
+          data-tooltip-id="btn-tooltip"
+          data-tooltip-content="Zoom Out"
+        />
+        
+        <MdRestartAlt
+          className="map-btn map-btn-minus"
+          onClick={handleResetPosition}
+          data-tooltip-id="btn-tooltip"
+          data-tooltip-content="Reset Zoom"
+        />
+        
+        {showNameOnHover ? (
+          <TbMessageLanguage
+            className={"map-btn map-btn-show "}
+            onClick={toggleShowNameOnHover}
+            data-tooltip-id="btn-tooltip"
+            data-tooltip-content="Hide Name On Hover"
+          />
+        ) : (
+          <TbMessageOff
+            className={"map-btn map-btn-show "}
+            onClick={toggleShowNameOnHover}
+            data-tooltip-id="btn-tooltip"
+            data-tooltip-content="Show Name On Hover"
+          />
+        )}
+      </div>
+    </div>
+  );
 };
-export default Map;
+
+export default memo(MapChart);

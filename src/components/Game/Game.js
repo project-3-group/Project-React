@@ -78,7 +78,7 @@ function Game() {
           </Card.Body>
         </Card>
 
-
+        
         <Score highestScore={highestScore} score={score} />
       </div>
     </div>
