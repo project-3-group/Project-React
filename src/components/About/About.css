@@ -32,7 +32,7 @@
     background-color: #EFEFEF;
     height: 332px;
 }
-h1 ,h2{
+.h-1,.h-2 {
   font-style: normal;
   font-size: 3.75rem;
   text-transform: uppercase;
@@ -40,6 +40,7 @@ h1 ,h2{
   line-height: 1;
   margin: 0 0 0 auto;
   padding: 30px;
+  color :#FFF
 }
 
 .team {
@@ -66,11 +67,12 @@ h1 ,h2{
 
 p.paragraph {
   font-size: larger;
+  color: #FFF;
 } 
 
 
-.about {
-  border: 2px solid #fff;
+.about-section {
+  border: 2px solid #144272;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background: linear-gradient( #2C74B3 , #fff);
+  background: linear-gradient( #144272 , #fff);
 }
