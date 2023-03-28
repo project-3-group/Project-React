@@ -1,24 +1,19 @@
-.head{
-    text-align: center;
+.iconBtn{
+font-size: 2rem;
+padding: 0.2em;
+cursor: pointer;
 }
-
-.drop{
-
-margin-left: 50px;
+.iconBtn2{
+    font-size: 2rem;
+    padding: 0.2em;
+    color: rgb(199, 25, 25);
+    cursor: pointer;
 }
+.iconBtn:hover{
+    color: rgb(72, 72, 235);
 
-.text{
-    margin-left: 60px;
 }
-
-.deopCountry{
-    width: 45%;
-}
-
-.btn{
-    justify-content: center;
-    width: 80%;
-    height: 50px;
-    justify-content: center;
-
+.iconBtn2:hover{
+    background-color: rgba(241, 126, 126, 0.473);
+    border-radius: 50%;
 }

@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Game from "./components/Game/Game";
 import Login from "./components/Login/Login";
 import SignUp from "./components/Signup/SignUp";
+import AddFact from "./components/AddFact/AddFact";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/addfact" element={<AddFact />} />
       </Routes>
     </>
   );
