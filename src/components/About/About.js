@@ -230,7 +230,7 @@ function About() {
             <SwiperSlide>
               <Card style={{ width: '18rem' }} className='c-s'>
                 <Card.Img variant="top" src={teamMembers[4].pictureUrl} className='image' />
-                <Card.Body>
+                <Card.Body className='bodycard'>
                   <Card.Title>{teamMembers[4].name}</Card.Title>
 
                   <Card.Text>
