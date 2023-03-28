@@ -125,9 +125,9 @@ function CountryCard(props) {
             //     <section>
 
             //     </section>
-            <section id='country-card'>
+            // <section >
 
-                <div class="row" >
+                <div class="row" id='country-card'>
                     <div class="column">
                         <div class="card">
                             <div class="icon-wrapper">
@@ -204,7 +204,8 @@ function CountryCard(props) {
                         </div>
                     </div>
                 </div>
-            </section>
+            // </section>
+            
         );
     }
 }
