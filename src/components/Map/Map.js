@@ -1,8 +1,8 @@
-import "react-tooltip/dist/react-tooltip.css";
-import { Tooltip } from "react-tooltip";
-import MapChart from "./MapChart";
 import { useEffect, useState } from "react";
-
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
+import './Map.css'
+import MapChart from "./MapChart";
 
 function Map({
   onSelectCountry,
@@ -20,7 +20,7 @@ function Map({
         toggleShowNameOnHover={toggleShowNameOnHover}
         showNameOnHover={showNameOnHover}
       />
-      {showNameOnHover && <ToolTipOnMouse/>}
+      {showNameOnHover && <ToolTipOnMouse />}
     </div>
   );
 }
@@ -28,27 +28,27 @@ function Map({
 function ToolTipOnMouse() {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 
-  const handleMouseMove = event => {
-    setMousePosition({
-      x: event.clientX,
-      y: event.clientY
-    });
-  };
-
   useEffect(() => {
-    document.addEventListener('mousemove' , handleMouseMove)
-  
-    return () => {
-      document.removeEventListener('mousemove' , handleMouseMove)
+    const handleMouseMove = (event) => {
+      setMousePosition({
+        x: event.clientX,
+        y: event.clientY,
+      });
+    };
 
-    }
-  }, [])
-  
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <Tooltip
       anchorSelect=".country-element"
       position={mousePosition}
+      className="map-tooltip"
+      classNameArrow="map-tooltip-arrow"
     />
   );
 }
