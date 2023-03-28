@@ -1,4 +1,4 @@
-import { Card,Row,Col } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 function Fact(props) {
   return (
     <Card style={{ width: '18rem' }}>
