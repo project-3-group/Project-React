@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import flag from '../../assest/flag.png';
+// import flag from '../../assest/flag.png';
 // import { useState, useEffect } from 'react';
 
 function CountryCard(props) {
