@@ -1,0 +1,58 @@
+.main-navbar{
+  background-color: var(--blue-90);
+  color: white;
+}
+
+.main-navbar .logo{
+  height: 1.8rem;
+}
+
+.main-navbar .btn-primary{
+  background-color: var(--blue-30);
+  color: white;
+  border: 1px solid var(--blue-30); 
+}
+
+.main-navbar .btn-primary:hover{
+  background-color: var(--blue-50);
+  color: white;
+  border: 1px solid var(--blue-50); 
+}
+
+
+.main-navbar .btn-outline-secondary{
+  color: white;
+  border:1px solid white;
+}
+
+.main-navbar .btn-outline-secondary:hover{
+  background-color: white;
+  color:hsl(211.48deg 77.22% 15.49%);
+  border:1px solid white;
+}
+
+
+/* underline animation */
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+
+.underline-animation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--blue-30);
+  transform: scaleX(0);
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.underline-animation:hover::before {
+  transform: scaleX(1);
+}
