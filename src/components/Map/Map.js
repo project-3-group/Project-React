@@ -10,6 +10,7 @@ function Map({ onSelectCountry, highlightSelected,showNameOnHover = true }) {
         highlightSelected={highlightSelected}
       />
       {showNameOnHover && <Tooltip anchorSelect=".country-element" />}
+      
     </div>
   );
 }

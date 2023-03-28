@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuthCtx, useUser } from "../../contexts/authCtx";
 // import logo from './logo.svg';
 
+
 function NavBar() {
   const user = useUser();
   const { logout } = useAuthCtx();
@@ -12,6 +13,8 @@ function NavBar() {
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/">
+
+
           {/* <img
             src='logo.jpeg'
             width="200"
@@ -19,6 +22,7 @@ function NavBar() {
             className="d-inline-block align-top"
             alt="Logo"
           /> */}
+
           GeoGenius
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />

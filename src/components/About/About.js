@@ -11,7 +11,6 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
 
@@ -56,7 +55,7 @@ function About() {
       phone: '0795246002'
     },
     {
-      name: 'Deena Jaradat',
+      name: 'Dina Jaradat',
       pictureUrl: dina,
       githubUrl: '',
       linkedinUrl: 'https://www.linkedin.com/in/deena-jaradat-518474255/',
@@ -65,7 +64,7 @@ function About() {
     }
   ];
   return (
-    <>
+    <div >
     <ScrollButton />
       <div className="about-section">
         <div className='about'>
@@ -101,7 +100,7 @@ function About() {
             modules={[EffectCoverflow, Pagination, Navigation]}
             className='swiper_content'>
             <SwiperSlide>
-              <Card style={{ width: '18rem' }} >
+              <Card style={{ width: '18rem' }} className='c-s'>
                 <Card.Img variant="top" src={teamMembers[0].pictureUrl} className='image' />
                 <Card.Body>
                   <Card.Title>{teamMembers[0].name}</Card.Title>
@@ -133,7 +132,7 @@ function About() {
               </Card>
             </SwiperSlide>
             <SwiperSlide>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '18rem' }} className='c-s'>
                 <Card.Img variant="top" src={teamMembers[1].pictureUrl} className='image' />
                 <Card.Body>
                   <Card.Title>{teamMembers[1].name}</Card.Title>
@@ -165,7 +164,7 @@ function About() {
               </Card>
             </SwiperSlide>
             <SwiperSlide>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '18rem' }} className='c-s'>
                 <Card.Img variant="top" src={teamMembers[2].pictureUrl} className='image' />
                 <Card.Body>
                   <Card.Title>{teamMembers[2].name}</Card.Title>
@@ -197,7 +196,7 @@ function About() {
               </Card>
             </SwiperSlide>
             <SwiperSlide>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '18rem' }} className='c-s'>
                 <Card.Img variant="top" src={teamMembers[3].pictureUrl} className='image' />
                 <Card.Body>
                   <Card.Title>{teamMembers[3].name}</Card.Title>
@@ -229,9 +228,9 @@ function About() {
               </Card>
             </SwiperSlide>
             <SwiperSlide>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '18rem' }} className='c-s'>
                 <Card.Img variant="top" src={teamMembers[4].pictureUrl} className='image' />
-                <Card.Body>
+                <Card.Body className='bodycard'>
                   <Card.Title>{teamMembers[4].name}</Card.Title>
 
                   <Card.Text>
@@ -278,7 +277,7 @@ function About() {
       </div>
 
 
-    </>
+    </div>
   );
 }
 
