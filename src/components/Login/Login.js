@@ -30,7 +30,7 @@ function Login() {
         <Col md={8} lg={6} xs={12}>
           <Card className="shadow1">
             <Card.Body >
-              <div className="mb-3 mt-4">
+              <div className="text-center mb-3 mt-4">
                 <h2 className="fw-bold mb-2 text-uppercase">GeoGenius</h2>
                 {/* <p className=" mb-5">Please enter your email and password!</p> */}
                 <Form className="mb-3" onSubmit={handleSubmit}>
@@ -54,7 +54,7 @@ function Login() {
               </div> */}
                   <div className="d-grid">
                     
-                    <Button variant="primary" type="submit" disabled={loading}>
+                    <Button variant="primary" type="submit" disabled={loading}   className="glow-on-hover">
                       {loading ? 'Logging...': "Login" }
                     </Button>
                   </div>
