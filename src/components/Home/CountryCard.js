@@ -45,7 +45,9 @@ function CountryCard(props) {
                                     <Card.Body>
                                         <Card.Title>Capital</Card.Title>
                                         <Card.Text>
-                                            {props.countryData.capital}
+                                            {props.countryData.capital?
+                                            props.countryData.capital
+                                            : 'No official capital'}
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
@@ -55,7 +57,9 @@ function CountryCard(props) {
                                     <Card.Body>
                                         <Card.Title>Currency</Card.Title>
                                         <Card.Text>
-                                            {`${currencyName} (${currencySymbol})`}
+                                            { currencyName?
+                                            `${currencyName} '${currencySymbol}'`
+                                            : 'No official currency'}
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
@@ -65,7 +69,9 @@ function CountryCard(props) {
                                     <Card.Body>
                                         <Card.Title>Languages</Card.Title>
                                         <Card.Text>
-                                            {Object.values(props.countryData.languages).join(', ')}
+                                            {(props.countryData.languages?
+                                            Object.values(props.countryData.languages).join(', ')
+                                            : 'No official language')}
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
