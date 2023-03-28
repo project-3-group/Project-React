@@ -5,13 +5,13 @@
 }
 
 .country-element {
-  fill: #2a354d;
+  fill: var(--blue-90);
   outline: none;
   transform: fill 1s;
 }
 
 .country-element:hover {
-  fill: #f53;
+  fill: #159895;
   outline: none;
 }
 
@@ -20,12 +20,8 @@
   outline: none;
 }
 
-.sphere-path {
-  fill: rgb(71, 49, 150);
-}
-
 .path-clicked {
-  stroke: red;
+  stroke: #159895;
 }
 
 .map-btn-container {
@@ -43,7 +39,7 @@
   border-radius: 50%;
   cursor: pointer;
   padding: 0.2em;
-  background-color: #f53;
+  background-color: #159895;
 }
 
 .map-btn:focus {
