@@ -2,37 +2,7 @@
 import Card from 'react-bootstrap/Card';
 
 function FlagGame(props) {
-    /*const [answerStatus, setAnswerStatus] = useState('');
-    const [userAnswer, setUserAnswer] = useState('');
-    const [currentFlag, setCurrentFlag] = useState(props.flag);
-
-    function handleAnswerSubmit(e) {
-        e.preventDefault();
-        const correctAnswer = currentFlag.name.common.toLowerCase();
-        const formattedUserAnswer = userAnswer.trim().toLowerCase();
-
-        if (formattedUserAnswer === correctAnswer) {
-            setAnswerStatus('correct');
-        } else {
-            setAnswerStatus('incorrect');
-        }
-    }*/
-
-    /*function handleNextFlag() {
-        setAnswerStatus('');
-        setUserAnswer('');
-        if (props.countries.length > 0) {
-            const newFlag = getRandomFlag(props.countries);
-            setCurrentFlag(newFlag);
-        }
-    }*/
-
-    /*function getRandomFlag(countries) {
-        const randomIndex = Math.floor(Math.random() * countries.length);
-        return countries[randomIndex];
-    }*/
-
-
+    
     return (
 
         <Card style={{ width: '50rem', height: '10rem', marginLeft: '10rem' }}>
