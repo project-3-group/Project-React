@@ -68,13 +68,13 @@ function About() {
     <ScrollButton />
       <div className="about-section">
         <div className='about'>
-          <h1 style={{ textAlign: 'center' }}>About Us</h1>
+          <h1 className='h-1' style= {{ textAlign: 'center' }}>About Us</h1>
           <p className='paragraph'>Our team consists of passionate full-stack developers who have honed their skills at LTUC. With our combined knowledge and experience, we were able to build this website as part of our prep project. We take pride in the fact that we are constantly learning and improving our craft. Our team is comprised of amazing individuals who share a passion for coding and problem-solving. It was a pleasure working together on this project.</p>
 
         </div>
         <div>
           <div className='our-team'>
-        <h2 style={{ textAlign: 'center' }}>Our Team</h2>
+        <h2  className='h-2' style={{ textAlign: 'center' }}>Our Team</h2>
         </div>
         
         <div className='team' >
