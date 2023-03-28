@@ -22,7 +22,7 @@ function FactCard(props) {
 
   return (
     <>
-    <Container >
+    <Container>
     <Card className="d-flex flex-row align-items-center">
       <Card.Body><h4>{props.factData.fact}</h4>
       <p>{props.factData.country}</p>

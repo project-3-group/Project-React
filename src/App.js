@@ -9,6 +9,7 @@ import Game from "./components/Game/Game";
 import Login from "./components/Login/Login";
 import SignUp from "./components/Signup/SignUp";
 import AddFact from "./components/AddFact/AddFact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/addfact" element={<AddFact />} />
       </Routes>
+      <Footer />
     </>
   );
 }
