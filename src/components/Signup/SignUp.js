@@ -55,10 +55,10 @@ const SignUp = () => {
       <Row className="d-flex justify-content-center align-items-center signup-form-container">
         <Col md={10} lg={8} xs={12}>
           <Card className="shadow">
-            <Card.Body>
+            <Card.Body className="signup">
               <div className="mb-3 mt-4">
-                <h2 className="fw-bold mb-2 text-uppercase">Geo Genius</h2>
-                <p className=" mb-5">Please enter your details to join us!</p>
+                <h2 className="fw-bold mb-2 text-uppercase">GeoGenius</h2>
+                {/* <p className=" mb-5">Please enter your details to join us!</p> */}
                 <Form onSubmit={handleSubmit}>
                   <Row className="mb-3">
                     <Form.Group
