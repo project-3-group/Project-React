@@ -1,3 +1,18 @@
+:root {
+  --red: #250303;
+  --page: #f2eee0;
+  --neon: #c8e6f5;
+  --bigBlue: #2c7bfe;
+  --smallBlue: #5ca0d3;
+  --backGroung: #c9c6c5;
+
+  --blue-90:#0A2647;
+  --blue-70:#144272;
+  --blue-50:#205295;
+  --blue-30:#2C74B3;
+
+}
+
 .App {
   text-align: center;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAuthCtx, useUser } from "../../contexts/authCtx";
+import logo from '../../assest/internet.png'
 // import logo from './logo.svg';
 
 
@@ -15,13 +16,13 @@ function NavBar() {
         <Navbar.Brand href="/">
 
 
-          {/* <img
-            src='logo.jpeg'
-            width="200"
-            height="100"
+          <img
+            src={logo}
+            width="5%"
+            height="5%"
             className="d-inline-block align-top"
             alt="Logo"
-          /> */}
+          />
 
           GeoGenius
         </Navbar.Brand>
