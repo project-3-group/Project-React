@@ -1,0 +1,140 @@
+/*html {
+    font-family: system-ui, sans-serif;
+    font-size: 1.25rem;
+  }
+  
+  body {
+    margin: '50rem';
+  }
+  
+  svg {
+    display: flex;
+    vertical-align: middle;
+  }
+  
+  path {
+    fill: #2a354d;
+  }
+  
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }*/
+
+  
+  .map-chart {
+    position: relative;
+  }
+  
+  .country-element {
+    fill: #272733;
+    outline: none;
+    transform: fill 1s;
+  }
+  
+  .country-element:hover {
+    fill: #E21818;
+    outline: none;
+  }
+  
+  .country-element:pressed {
+    fill: #d6d6da;
+    outline: none;
+  }
+  
+  .sphere-path {
+    fill: #4E6E81;
+  }
+  
+  .path-clicked {
+    stroke:#E21818;
+  }
+  
+  .map-btn-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    right: 2em;
+    top: 2em;
+  }
+  
+  .map-btn {
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.2em;
+    background-color: #E21818;
+  }
+  
+  .map-btn:hover {
+    cursor: pointer;
+    filter: drop-shadow(1px 2px 3px black);
+  }
+
+  /*.map-chart {
+    position: relative;
+    background-color: #d6d6da2c;
+    border:none;
+  }
+  
+  .country-element {
+    fill: #2a354d;
+    outline: none;
+    transform: fill 1s;
+  }
+  
+  .country-element:hover {
+    fill: #E21818;
+    outline: none;
+  }
+  
+  .country-element:pressed {
+    fill: #d6d6da;
+    outline: none;
+  }
+  
+  .sphere-path {
+    fill: rgb(71, 49, 150);
+  }
+  
+  .path-clicked {
+    stroke: #E21818;
+  }
+  
+  .map-btn-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    right: 2em;
+    top: 2em;
+  }
+  
+  .map-btn {
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.2em;
+    background-color: #f53;
+  }
+  
+  .map-btn:focus {
+    outline: none;
+  }
+  
+  .map-btn:hover {
+    cursor: pointer;
+    filter: drop-shadow(1px 2px 3px black);
+  }
+  
+  @media (max-width: 500px) {
+    .map-btn {
+      display: none;
+    }
+  }*/
+
+  
+  
