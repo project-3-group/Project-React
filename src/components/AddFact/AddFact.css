@@ -1,0 +1,19 @@
+.iconBtn{
+font-size: 2rem;
+padding: 0.2em;
+cursor: pointer;
+}
+.iconBtn2{
+    font-size: 2rem;
+    padding: 0.2em;
+    color: rgb(199, 25, 25);
+    cursor: pointer;
+}
+.iconBtn:hover{
+    color: rgb(72, 72, 235);
+
+}
+.iconBtn2:hover{
+    background-color: rgba(241, 126, 126, 0.473);
+    border-radius: 50%;
+}
