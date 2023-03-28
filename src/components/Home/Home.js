@@ -4,6 +4,8 @@ import CountryCard from './CountryCard'
 import Map from '../Map/Map'
 import { useState, useEffect } from 'react';
 import Facts from './Facts';
+import MySwiper from './swiper'
+
 function Home() {
   const [showNameOnHover, setShowNameOnHover] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -34,6 +36,7 @@ function Home() {
 
   return (
     <>
+    <MySwiper />
       <SwitchBar onChange={(checked) => setShowNameOnHover(checked)}/>
       <Map onSelectCountry={handleSelectCountry} highlightSelected={true} showNameOnHover={showNameOnHover}
  />
