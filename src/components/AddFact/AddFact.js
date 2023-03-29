@@ -68,7 +68,7 @@ function AddFact() {
 
             <Container className='factcards'>
                 <h3>Your Facts</h3>
-            {factDataArr.map((item) => {
+            {factDataArr.reverse().map((item) => {
                 return <FactCard factData={item} getFactFunction={getFactFunction} />
             })}
             </Container>

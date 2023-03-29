@@ -92,4 +92,17 @@
     }
   }
 
- 
+  .flagSize {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pdesign p{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+  }
+  .flagdiv{
+    height: 70px;
+  }

@@ -6,14 +6,14 @@ function Facts(props) {
         // if (facts.length >0)
         return (
             <>
-                <div>
-                    <h1> Facts </h1>
+                <div className="container">
+                    <h1 style={{color:"var(--blue-90)"}}> Facts </h1>
                     {(facts.length>0 ?
                     <Card>
                         <Row>
                             {facts.map((fact) => {
                                 return (
-                                    <Col sm={6} md={2}>
+                                    <Col sm={6} md={4}>
                                         <Fact fact={fact} />
                                     </Col>
                                 )

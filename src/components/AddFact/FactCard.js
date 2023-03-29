@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import UpdateFact from './UpdateFact'
 import {FaTrash,FaEdit} from 'react-icons/fa'
 import './AddFact.css'
+import lookup from 'country-code-lookup'
 
 
 function FactCard(props) {
@@ -25,7 +26,7 @@ function FactCard(props) {
     <Container className='cardCont'>
     <Card className="d-flex flex-row align-items-center">
       <Card.Body><h4>{props.factData.fact}</h4>
-      <p>{props.factData.country}</p>
+      <p>{lookup.byIso(props.factData.country).country}</p>
       </Card.Body>
 
       <FaTrash className='iconBtn2'onClick={deleteFact}/>

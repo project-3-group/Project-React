@@ -9,7 +9,7 @@ import { MdLocationCity } from 'react-icons/md';
 import { BsCurrencyDollar, BsFlag } from 'react-icons/bs';
 import { IoLanguageOutline } from 'react-icons/io5';
 import { IoIosPeople, IoMdTime } from 'react-icons/io';
-
+import Overview from './Overview';
 
 
 function CountryCard(props) {
@@ -31,7 +31,7 @@ function CountryCard(props) {
     // }, [])
 
     if (!props.countryData) {
-        return <div style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}>
+        return <div style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}id='con-info'>
             <h1>Click on a country to see more information</h1>
         </div>
 
@@ -126,8 +126,13 @@ function CountryCard(props) {
 
             //     </section>
             // <section >
+            <>
+            <div className="container">
+                <div class="row" id='con-info'>
+                    <Overview name={props.countryData.name.common} overview={props.countryData.overview} />
+                </div>
 
-                <div class="row" >
+                <div  className="pdesign row">
                     <div class="column">
                         <div className="a-1">
                             <div class="icon-wrapper">
@@ -156,6 +161,18 @@ function CountryCard(props) {
                             </p>
                         </div>
                     </div>
+                    <div class="column">
+                        <div className="a-1">
+                            <div class="icon-wrapper">
+                                <BsFlag />
+                            </div>
+                            <h3>Flag</h3>
+                            <div className='flagdiv'>
+                                <Card.Img className ="flagSize" variant="top" src={props.countryData.flags['png']} />
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="column">
                         <div className="a-1">
                             <div class="icon-wrapper">
@@ -192,20 +209,9 @@ function CountryCard(props) {
                             </p>
                         </div>
                     </div>
-                    <div class="column">
-                        <div className="a-1">
-                            <div class="icon-wrapper">
-                                <BsFlag />
-                            </div>
-                            <h3>Flag</h3>
-                            <p>
-                                <Card.Img variant="top" src={props.countryData.flags['png']} />
-                            </p>
-                        </div>
-                    </div>
                 </div>
-            // </section>
-            
+                </div>
+            </>
         );
     }
 }
