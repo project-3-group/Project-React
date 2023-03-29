@@ -105,7 +105,7 @@ function Game() {
           fontWeight: "bold",
         }}
       >
-        <Card style={{ width: "50rem", height: "10rem", marginLeft: "10rem" }}>
+        <Card className="Qhover" style={{ width: "50rem", height: "10rem", marginLeft: "10rem" , marginBottom:'5rem' , marginTop:'5rem'}}>
           <Card.Body
             style={{
               display: "flex",
