@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 import './CountryCard.css';
 // import flag from '../../assest/flag.png';
 // import { useState, useEffect } from 'react';
@@ -14,10 +14,10 @@ import { IoIosPeople, IoMdTime } from 'react-icons/io';
 
 function CountryCard(props) {
 
-    const cardStyle = {
-        border: 'none',
-        borderRight: '1px solid #ccc'
-    };
+    // const cardStyle = {
+    //     border: 'none',
+    //     borderRight: '1px solid #ccc'
+    // };
     // const [allContriesData, setAllContriesData] = useState(null);
     // useEffect(() => {
     //     const sendRequest = async () => {
@@ -125,11 +125,11 @@ function CountryCard(props) {
             //     <section>
 
             //     </section>
-            <section id='country-card'>
+            // <section >
 
                 <div class="row" >
                     <div class="column">
-                        <div class="card">
+                        <div className="a-1">
                             <div class="icon-wrapper">
                                 {/* <i class="fas fa-hammer"></i> */}
                                 <MdLocationCity />
@@ -143,7 +143,7 @@ function CountryCard(props) {
                         </div>
                     </div>
                     <div class="column">
-                        <div class="card">
+                        <div className="a-1">
                             <div class="icon-wrapper">
                                 <BsCurrencyDollar />
                                 {/* <i class="fas fa-brush"></i> */}
@@ -157,7 +157,7 @@ function CountryCard(props) {
                         </div>
                     </div>
                     <div class="column">
-                        <div class="card">
+                        <div className="a-1">
                             <div class="icon-wrapper">
                                 <IoLanguageOutline />
                             </div>
@@ -171,7 +171,7 @@ function CountryCard(props) {
                         </div>
                     </div>
                     <div class="column">
-                        <div class="card">
+                        <div className="a-1">
                             <div class="icon-wrapper">
                                 <IoIosPeople />
                             </div>
@@ -182,7 +182,7 @@ function CountryCard(props) {
                         </div>
                     </div>
                     <div class="column">
-                        <div class="card">
+                        <div className="a-1">
                             <div class="icon-wrapper">
                                 <IoMdTime />
                             </div>
@@ -193,7 +193,7 @@ function CountryCard(props) {
                         </div>
                     </div>
                     <div class="column">
-                        <div class="card">
+                        <div className="a-1">
                             <div class="icon-wrapper">
                                 <BsFlag />
                             </div>
@@ -204,7 +204,8 @@ function CountryCard(props) {
                         </div>
                     </div>
                 </div>
-            </section>
+            // </section>
+            
         );
     }
 }
