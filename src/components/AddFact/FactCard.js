@@ -20,13 +20,16 @@ function FactCard(props) {
     const axiosRes = await axios.delete(serverURl,{ withCredentials: true });
     await props.getFactFunction();
   }
-
+    let countryName = props.factData.country;
+    try {countryName = lookup.byIso(props.factData.country).country}
+    catch (e) {console.log(e)}
   return (
     <>
     <Container className='cardCont'>
     <Card className="d-flex flex-row align-items-center">
       <Card.Body><h4>{props.factData.fact}</h4>
-      <p>{lookup.byIso(props.factData.country).country}</p>
+      {/* {console.log(lookup.byIso(props.factData.country))} */}
+      <p>{countryName}</p>
       </Card.Body>
 
       <FaTrash className='iconBtn2'onClick={deleteFact}/>
