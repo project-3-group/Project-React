@@ -10,7 +10,7 @@ import axios from 'axios';
 import UpdateFact from './UpdateFact';
 import FactCard from './FactCard';
 import { useUser } from '../../contexts/authCtx';
-
+import {FaMap} from 'react-icons/fa'
 
 function AddFact() {
     const [selected, setSelected] = useState("");
@@ -31,9 +31,9 @@ function AddFact() {
     }
 
     const getFactFunction = async () => {
-        if(user===null)return
+        if (user === null) return
         const serverURl = `http://localhost:3002/getFactsbyUser/${user?.id}`
-        const axiosRes = await axios.get(serverURl,{ withCredentials: true });
+        const axiosRes = await axios.get(serverURl, { withCredentials: true });
         setFactDataArr(axiosRes.data);
         console.log(axiosRes.data);
 
@@ -41,19 +41,19 @@ function AddFact() {
 
     useEffect(() => {
         getFactFunction()
-     }, [user])
-    
+    }, [user])
+
 
     return (
 
         <>
-            <h1 className='head'>Add Your Fact</h1>
 
-            <Container className='Container mb-3'>
+            <Container className='addFactCont'>
+                <h1 className='head'><FaMap /> Add Your Fact</h1>
                 <Form onSubmit={addFactFunction}>
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridEmail" className='text'>
-                            <Form.Label>Add Fact</Form.Label>
+                            <Form.Label>Fact Content</Form.Label>
                             <Form.Control type='text' placeholder="Write Your Fact Here..." name="fact" />
                         </Form.Group>
 
@@ -62,13 +62,17 @@ function AddFact() {
                             <ReactFlagsSelect selected={selected} onSelect={(code) => setSelected(code)} className='deopCountry' />
                         </Form.Group>
                     </Row>
-                    <Button variant="primary" size="lg" className='btn' type="submit">Add</Button>
+                    <Button variant="primary" size="lg" className='btn3' type="submit">Add</Button>
                 </Form>
             </Container>
-            {factDataArr.map((item)=>{
-               return <FactCard factData={item} getFactFunction={getFactFunction} />
+
+            <Container className='factcards'>
+                <h3>Your Facts</h3>
+            {factDataArr.map((item) => {
+                return <FactCard factData={item} getFactFunction={getFactFunction} />
             })}
-            
+            </Container>
+
         </>
     )
 }
