@@ -1,5 +1,7 @@
 import React from 'react';
 import './swiper.css'
+import { Autoplay } from 'swiper';
+
 import slide1 from '../../assest/Slide1.PNG';
 import slide2 from '../../assest/Slide2.PNG';
 import slide3 from '../../assest/Slide3.PNG';
@@ -19,7 +21,7 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 function MySwiper () {
   return (
     <Swiper 
-    className ='swiper_content my-custom-class'
+      className ='swiper_content my-custom-class'
       effect={'coverflow'}
       spaceBetween={50}
       grabCursor={true}
@@ -32,28 +34,27 @@ function MySwiper () {
         modifier: 2.5,
 
       }}
+      autoplay={{delay: 3000, disableOnInteraction: false}}
       pagination={{ el: '.swiper-pagination', clickable: true }}
       navigation={{
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
         clickable: true
       }}
-      modules={[EffectCoverflow, Pagination, Navigation]}
-      
+      modules={[EffectCoverflow, Pagination, Navigation ,Autoplay]}
     >
       <SwiperSlide>
-        <img src={slide1} alt='slide image' className='imgslides'/>
+        <img src={slide1} alt='slide image' className='imgslides' style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={slide2} alt='slide image' className='imgslides'/>
+        <img src={slide2} alt='slide image' className='imgslides' style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </SwiperSlide>
       <SwiperSlide>
-      <img src={slide3} alt='slide image'className='imgslides'/>
+        <img src={slide3} alt='slide image' className='imgslides' style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </SwiperSlide>
       <SwiperSlide>
-      <img src={slide4} alt='slide image' className='imgslides'/>
+        <img src={slide4} alt='slide image' className='imgslides' style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </SwiperSlide>
-      
       <div className='slider-controler'>
         <div className='swiper-button-prev slider-arrow'>
           <ion-icon name="arrow-back-outline"></ion-icon>
