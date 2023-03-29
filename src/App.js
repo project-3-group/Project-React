@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import { Helmet } from "react-helmet";
-import Game from "./components/Game/GameV2";
+import Game from "./components/Game/Game";
 import Login from "./components/Login/Login";
 import SignUp from "./components/Signup/SignUp";
 import AddFact from "./components/AddFact/AddFact";
