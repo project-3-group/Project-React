@@ -25,8 +25,9 @@ function Game() {
     setgetanswer(question.answers);
   }
   const handleAnswerSubmit = (answer) => {
-    console.log(answer);
-    if (answer === getanswer) {
+    const answers = (answer.properties);
+    console.log(answer.properties.name);
+    if (answers === getanswer) {
       setScore(score + 1);
     } else if (score !== 0 ) {
       setScore(score - 1);
