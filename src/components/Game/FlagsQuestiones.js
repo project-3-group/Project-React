@@ -10,7 +10,7 @@ function FlagQus({ flag }) {
 
 
     <div>
-      <img src={{ flag }} alt="Flag" style={{ width: '5rem', textAlign: 'right', marginBottom: '1.5rem' }} />
+      <img src={ flag } alt="Flag" style={{ width: '5rem', textAlign: 'right', marginBottom: '1.5rem' }} />
 
       <p>Which country does this flag belong to?</p>
     </div>
