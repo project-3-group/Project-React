@@ -69,9 +69,9 @@ function Game() {
     <div >
       <div> <Map onSelectCountry={handleAnswerSubmit} /> </div>
       <div style={{ display: 'flex', justifyContent: 'space-around', margin: '2rem', textAlign: 'center', fontWeight: 'bold' }}>
-        <Card style={{ width: '50rem', height: '10rem', marginLeft: '10rem' }}>
+        <Card style={{ width: '50rem', height: '10rem', marginLeft: '10rem' ,backgroundColor:'#272733' }}>
           <Card.Body style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', height: '100%' }}>
-            <Card.Text style={{ textAlign: 'center', fontWeight: 'bold' }}>
+            <Card.Text style={{ textAlign: 'center', fontWeight: 'bold', color: 'white'}}>
               <div>
                 <p> {question.Component} </p>
               </div>
@@ -86,7 +86,7 @@ function Game() {
 
 
   )
-}
+};
 
 export default Game;
 

@@ -6,12 +6,12 @@ function Score(props) {
 
     return (
         <div style={{ width: '10rem', height: '4rem', marginRight: '20rem' }}>
-            <Card style={{ marginBottom: '0.5rem' }}>
+            <Card style={{ marginBottom: '0.5rem' , backgroundColor:'#272733', color: 'white'}}>
                 <Card.Body style={{ textAlign: 'center', fontWeight: 'bold' }}>
                     {`SCORE: ${props.score}`}
                 </Card.Body>
             </Card>
-            <Card style={{ marginBottom: '0.5rem' }}>
+            <Card style={{ marginBottom: '0.5rem' , backgroundColor:'#272733', color: 'white'}}>
                 <Card.Body style={{ textAlign: 'center', fontWeight: 'bold' }}>
                     {`YOUR HIGHEST: ${props.highestScore}`}
                 </Card.Body>
