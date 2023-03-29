@@ -12,7 +12,7 @@ import Card from 'react-bootstrap/Card';
 
 function Game() {
   const [question, setQuestion] = useState(null);
-  const [highestScore, setHighestScore] = useState(null);
+  const [highestScore, setHighestScore] = useState(0);
   const [getanswer, setgetanswer] = useState("");
   const [score, setScore] = useState(0);
   const [countries, setCountries] = useState([]);
@@ -22,12 +22,13 @@ function Game() {
     const createQuesFun = allQuestions[Math.floor(Math.random() * allQuestions.length)]
     const question = await createQuesFun(countryData);
     setQuestion(question)
+    setgetanswer(question.answers);
   }
   const handleAnswerSubmit = (answer) => {
     console.log(answer);
-    if (answer === flag.name.common) {
+    if (answer === getanswer) {
       setScore(score + 1);
-    } else {
+    } else if (score !== 0 ) {
       setScore(score - 1);
     }
     handleScoreChange(score);
@@ -66,7 +67,7 @@ function Game() {
 
   return (
     <div >
-      <div> <Map submitAnswer={handleAnswerSubmit} /> </div>
+      <div> <Map onSelectCountry={handleAnswerSubmit} /> </div>
       <div style={{ display: 'flex', justifyContent: 'space-around', margin: '2rem', textAlign: 'center', fontWeight: 'bold' }}>
         <Card style={{ width: '50rem', height: '10rem', marginLeft: '10rem' }}>
           <Card.Body style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', height: '100%' }}>
