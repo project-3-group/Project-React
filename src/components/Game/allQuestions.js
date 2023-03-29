@@ -5,14 +5,15 @@ export async function createCapitalQuestion( allCountryData ) {
   const country = allCountryData[Math.floor(Math.random() * allCountryData.length)];
 
   const question = `What country's capital city is ${country.capital[0]}?`;
-  const answers = [country];
+  const answers = [country.name.common];
+  console.log(answers);
 
   const Component = <DefaultQus question={question}/>
 
   return {answers, Component };
 }
 
-export async function createLanguageQuestion( allCountryData ) {
+/*export async function createLanguageQuestion( allCountryData ) {
   // get random country
   const country = allCountryData[Math.floor(Math.random() * allCountryData.length)];
 
@@ -31,20 +32,23 @@ export async function createLanguageQuestion( allCountryData ) {
   const question = `Select one country that has ${language} as its official language.`;
 
   const Component = <DefaultQus question={question}/>
-
+  
   return {answers: countriesWithLanguage, Component };
-}
+  console.log(countriesWithLanguage);
+}*/
 
 export async function createFlagsQuestion( allCountryData ) {
   const country = allCountryData[Math.floor(Math.random() * allCountryData.length)];
 
-  const answers = [country];
+  const answers = [country.name.common];
+  console.log(answers);
 
   const Component = <FlagQus flag={country.flags.png}/>
 
   return {answers, Component };
+  
 }
 
-const allQuestions = [createCapitalQuestion,createLanguageQuestion,createFlagsQuestion]
+const allQuestions = [createCapitalQuestion,/*createLanguageQuestion,*/createFlagsQuestion]
 
 export default allQuestions;
