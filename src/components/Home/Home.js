@@ -5,7 +5,7 @@ import Map from '../Map/Map'
 import { useState, useEffect } from 'react';
 import Facts from './Facts';
 import MySwiper from './swiper'
-
+import Overview from './Overview';
 function Home() {
   const [showNameOnHover, setShowNameOnHover] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -13,7 +13,7 @@ function Home() {
   const [facts, setFacts] = useState(null);
   const handleSelectCountry = (country) => {
     setSelectedCountry(country);
-    document.getElementById('country-card')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('con-info')?.scrollIntoView({ behavior: 'smooth' });
   };
   useEffect(() => {
     const sendRequest = async () => {
@@ -40,7 +40,7 @@ function Home() {
       <MySwiper />
       {/* <SwitchBar onChange={(checked) => setShowNameOnHover(checked)}/> */}
       <Map onSelectCountry={handleSelectCountry} highlightSelected={true} showNameOnHover={showNameOnHover}/>
-      <CountryCard countryData={countryOverview}  />
+      <CountryCard countryData={countryOverview} />
       <Facts facts={facts} />
     </>
   )
