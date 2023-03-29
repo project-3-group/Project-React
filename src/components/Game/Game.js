@@ -22,15 +22,14 @@ function Game() {
     const createQuesFun = allQuestions[Math.floor(Math.random() * allQuestions.length)]
     const question = await createQuesFun(countryData);
     setQuestion(question)
-    setgetanswer(question.answers);
+    setgetanswer(question.answers[0]);
   }
   const handleAnswerSubmit = (answer) => {
-    const answers = (answer.properties);
+    const answers = (answer.properties.name);
     console.log(answer.properties.name);
-    if (answers === getanswer) {
+    console.log(getanswer);
+    if ({answers} === getanswer) {
       setScore(score + 1);
-    } else if (score !== 0 ) {
-      setScore(score - 1);
     }
     handleScoreChange(score);
     setFlag(getRandomQuestion(countries));
