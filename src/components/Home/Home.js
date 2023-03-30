@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import Facts from './Facts';
 import MySwiper from './swiper'
 import Overview from './Overview';
+import MapScroll from './MapScroll';
+import { MdAod } from 'react-icons/md';
 function Home() {
   const [showNameOnHover, setShowNameOnHover] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -39,9 +41,13 @@ function Home() {
     <>
       <MySwiper />
       {/* <SwitchBar onChange={(checked) => setShowNameOnHover(checked)}/> */}
-      <Map onSelectCountry={handleSelectCountry} highlightSelected={true} showNameOnHover={showNameOnHover}/>
+      <div id='MapId'>
+        <Map onSelectCountry={handleSelectCountry} highlightSelected={true} showNameOnHover={showNameOnHover} />
+      </div>
+
       <CountryCard countryData={countryOverview} />
       <Facts facts={facts} />
+      <MapScroll />
     </>
   )
 }
