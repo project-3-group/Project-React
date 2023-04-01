@@ -24,7 +24,7 @@ function AddFact() {
             "country": selected
         }
         console.log(obj);
-        const serverURl = `http://localhost:3002/addFact`
+        const serverURl = `${process.env.REACT_APP_SERVER_URL}/addFact`
         const axiosRes = await axios.post(serverURl, obj, { withCredentials: true });
         await getFactFunction();
 
@@ -32,7 +32,7 @@ function AddFact() {
 
     const getFactFunction = async () => {
         if (user === null) return
-        const serverURl = `http://localhost:3002/getFactsbyUser/${user?.id}`
+        const serverURl = `${process.env.REACT_APP_SERVER_URL}/getFactsbyUser/${user?.id}`
         const axiosRes = await axios.get(serverURl, { withCredentials: true });
         setFactDataArr(axiosRes.data);
         console.log(axiosRes.data);

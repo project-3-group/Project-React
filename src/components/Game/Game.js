@@ -27,7 +27,7 @@ function Game() {
 
   const updateHighestScore = async () => {
     try {
-      const serverURL = `http://localhost:3002/users/user`;
+      const serverURL = `${process.env.REACT_APP_SERVER_URL}/users/user`;
       const data = { hights_score: score + 1 };
       await axios.put(serverURL, data, { withCredentials: true });
       await updateUserData();
@@ -59,7 +59,7 @@ function Game() {
 
   useEffect(() => {
     const getAllCountryData = async () => {
-      // const serverURL = `http://localhost:3002/allcountry`;
+      // const serverURL = `${process.env.REACT_APP_SERVER_URL}/allcountry`;
       // const response = await axios.get(serverURL);
       setAllCountryData(countryData);
     };
