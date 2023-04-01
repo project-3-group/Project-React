@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
-* {
-  transition: all 0.3s ease-out;
-}
 
 html,
 body {
@@ -35,6 +32,14 @@ p {
 }
 p.small {
   font-size: 14px;
+}
+
+.spinner-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
 }
 
 .go-corner {

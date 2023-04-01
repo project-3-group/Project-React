@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import Spinner from 'react-bootstrap/Spinner'
 import SwitchBar from './SwitchBar'
 import CountryCard from './CountryCard'
 import Map from '../Map/Map'
@@ -12,6 +13,7 @@ function Home() {
   const [showNameOnHover, setShowNameOnHover] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [countryOverview, setCountryOverview] = useState(null);
+  const [loading, setLoading] = useState(false)
   const [facts, setFacts] = useState(null);
   const handleSelectCountry = (country) => {
     setSelectedCountry(country);
@@ -19,15 +21,17 @@ function Home() {
   };
   useEffect(() => {
     const sendRequest = async () => {
+      setLoading(true)
       const serverUrl = process.env.REACT_APP_SERVER_URL;
-      const response = await fetch(serverUrl + '/allcountry/' + selectedCountry.properties.name);
+      const response = await fetch(serverUrl + '/allcountry/alpha/' + selectedCountry.id);
       const responseData = await response.json();
       setCountryOverview(responseData);
       console.log(responseData);
 
-      const factsResponse = await fetch(serverUrl + '/getFactsbyCountry/' + selectedCountry.properties.name);
+      const factsResponse = await fetch(serverUrl + '/getFactsbyCountry/alpha/' + selectedCountry.id);
       const factsResponseData = await factsResponse.json();
       setFacts(factsResponseData);
+      setLoading(false)
       console.log(factsResponseData);
     };
 
@@ -44,10 +48,13 @@ function Home() {
       <div id='MapId'>
         <Map onSelectCountry={handleSelectCountry} highlightSelected={true} showNameOnHover={showNameOnHover} />
       </div>
-
-      <CountryCard countryData={countryOverview} />
-      <Facts facts={facts} />
-      <MapScroll />
+      {loading ? <div className='spinner-container' id='con-info'><Spinner animation="grow" cla/></div> : 
+      <>
+        <CountryCard countryData={countryOverview} />
+        <Facts facts={facts} />
+        <MapScroll />
+      </>
+      }
     </>
   )
 }

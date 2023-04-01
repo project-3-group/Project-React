@@ -18,7 +18,7 @@ function UpdateFact(props) {
             "fact": e.target.fact.value,
             "country": selected
         }
-        const serverURl = `http://localhost:3002/getFactsbyID/${props.factData.id}`
+        const serverURl = `${process.env.REACT_APP_SERVER_URL}/getFactsbyID/${props.factData.id}`
         const axiosRes = await axios.put(serverURl, obj, { withCredentials: true });
         await props.getFactFunction();
         props.handleClose();

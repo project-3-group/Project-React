@@ -16,7 +16,7 @@ function FactCard(props) {
 
   const deleteFact = async() => {
     
-    const serverURl = `http://localhost:3002/deleteFact/${props.factData.id}`
+    const serverURl = `${process.env.REACT_APP_SERVER_URL}/deleteFact/${props.factData.id}`
     const axiosRes = await axios.delete(serverURl,{ withCredentials: true });
     await props.getFactFunction();
   }
