@@ -1,10 +1,5 @@
 import React, { memo, useRef, useState } from "react";
-import {
-  ZoomableGroup,
-  ComposableMap,
-  Geographies,
-  Geography,
-} from "react-simple-maps";
+import { ZoomableGroup, ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { MdZoomInMap, MdZoomOutMap, MdRestartAlt } from "react-icons/md";
 import { TbMessageOff, TbMessageLanguage } from "react-icons/tb";
 import data from "../../assets/world-countries.json";
@@ -22,6 +17,7 @@ const MapChart = ({
   const lastSelected = useRef(null);
 
   const handleOnClick = (e, geo) => {
+    console.log(geo);
     if (onSelectCountry) onSelectCountry(geo);
 
     if (highlightSelected) {
@@ -60,11 +56,7 @@ const MapChart = ({
         }}
         viewBox="0 7 900 387"
       >
-        <ZoomableGroup
-          zoom={position.zoom}
-          center={position.coordinates}
-          onMoveEnd={handleMoveEnd}
-        >
+        <ZoomableGroup zoom={position.zoom} center={position.coordinates} onMoveEnd={handleMoveEnd}>
           <Geographies geography={data}>
             {({ geographies }) =>
               geographies.map((geo) => (
@@ -89,21 +81,21 @@ const MapChart = ({
           data-tooltip-id="btn-tooltip"
           data-tooltip-content="Zoom In"
         />
-        
+
         <MdZoomOutMap
           className="map-btn map-btn-plus"
           onClick={handleZoomIn}
           data-tooltip-id="btn-tooltip"
           data-tooltip-content="Zoom Out"
         />
-        
+
         <MdRestartAlt
           className="map-btn map-btn-minus"
           onClick={handleResetPosition}
           data-tooltip-id="btn-tooltip"
           data-tooltip-content="Reset Zoom"
         />
-        
+
         {showNameOnHover ? (
           <TbMessageLanguage
             className={"map-btn map-btn-show "}

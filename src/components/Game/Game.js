@@ -5,7 +5,7 @@ import { useAuthCtx, useUser } from "../../contexts/authCtx";
 import Score from "./Score";
 import Map from "../Map/Map";
 import allQuestions from "./allQuestions";
-import countryData from "./country-data.json";
+import countryData from "../../assets/country-data.json";
 import "./Game.css";
 
 function Game() {
@@ -19,8 +19,7 @@ function Game() {
   const { updateUserData } = useAuthCtx();
 
   const updateQuestion = useCallback(async () => {
-    const createQuesFun =
-      allQuestions[Math.floor(Math.random() * allQuestions.length)];
+    const createQuesFun = allQuestions[Math.floor(Math.random() * allQuestions.length)];
     const question = await createQuesFun(allCountryData);
     setQuestion(question);
   }, [allCountryData]);
@@ -39,9 +38,8 @@ function Game() {
 
   const handleSelectCountry = (countryData) => {
     const isAnswerCorrect =
-      question?.answers.find(
-        (country) => country.cca2 === countryData.properties["Alpha-2"]
-      ) !== undefined;
+      question?.answers.find((country) => country.cca2 === countryData.properties["Alpha-2"]) !==
+      undefined;
 
     if (isAnswerCorrect) {
       handleOverlay("wright-answer");
@@ -88,11 +86,11 @@ function Game() {
   };
 
   return (
-    <div className='game'>
+    <div className="game">
       <div>
         <div className={"overlay " + gameState}>
-          {gameState === 'wrong-answer' && <p>Wrong Answer</p>}
-          {gameState === 'wright-answer' && <p>You are Correct</p>}
+          {gameState === "wrong-answer" && <p>Wrong Answer</p>}
+          {gameState === "wright-answer" && <p>You are Correct</p>}
         </div>
         <Map onSelectCountry={handleSelectCountry} />
       </div>
@@ -105,7 +103,16 @@ function Game() {
           fontWeight: "bold",
         }}
       >
-        <Card className="Qhover" style={{ width: "50rem", height: "10rem", marginLeft: "10rem" , marginBottom:'5rem' , marginTop:'5rem'}}>
+        <Card
+          className="Qhover"
+          style={{
+            width: "50rem",
+            height: "10rem",
+            marginLeft: "10rem",
+            marginBottom: "5rem",
+            marginTop: "5rem",
+          }}
+        >
           <Card.Body
             style={{
               display: "flex",
